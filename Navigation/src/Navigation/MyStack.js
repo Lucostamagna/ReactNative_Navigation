@@ -7,10 +7,16 @@ const HomeStack = createStackNavigator();
 
 export default function MyStack() {
   return (
-  <HomeStack.Navigator>
- <HomeStack.Screen name='Home' component={HomeScreen}/>
- <HomeStack.Screen name='Profile' component={Profile}/>
-
-  </HomeStack.Navigator>
-  )
+    <HomeStack.Navigator
+    initialRouteName='Home'
+    screenOptions={{
+      headerShown:true,
+      title:'something'
+    }}
+    >
+      <HomeStack.Screen name="Home" component={HomeScreen} />
+      <HomeStack.Screen name="Profile" component={Profile} />
+      <HomeStack.Screen name = 'Setting' component={Setting}/>
+    </HomeStack.Navigator>
+  );
 }
