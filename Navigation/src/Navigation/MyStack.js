@@ -8,15 +8,17 @@ const HomeStack = createStackNavigator();
 export default function MyStack() {
   return (
     <HomeStack.Navigator
-    initialRouteName='Home'
-    screenOptions={{
-      headerShown:true,
-      title:'something'
-    }}
+      initialRouteName="Home"
+      screenOptions={{
+        headerShown: true,
+        title: 'something',
+        headerTitleAlign: 'center',
+        presentation: 'card',
+      }}
     >
       <HomeStack.Screen name="Home" component={HomeScreen} />
       <HomeStack.Screen name="Profile" component={Profile} />
-      <HomeStack.Screen name = 'Setting' component={Setting}/>
+      <HomeStack.Screen name="Setting" component={Setting} />
     </HomeStack.Navigator>
   );
 }
