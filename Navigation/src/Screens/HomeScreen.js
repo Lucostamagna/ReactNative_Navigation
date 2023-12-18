@@ -11,6 +11,9 @@ const HomeScreen = () => {
         <Button 
         title= 'go to Setting'
         onPress={()=> navigation.navigate('Setting')}/>
+         <Button 
+        title= 'go to Profile'
+        onPress={()=> navigation.navigate('Profile')}/>
     </View>
   )
 }
