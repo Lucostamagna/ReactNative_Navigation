@@ -12,6 +12,16 @@ export const globalStyles = StyleSheet.create({
     title:{
         fontSize:32,
         fontWeight:'bold',
-        color:Colors.gray,
-    }
+        color:Colors.details,
+    },
+    botton:{
+        backgroundColor: 'transparent', 
+        borderColor: Colors.dark, 
+        borderWidth: 1,
+        borderRadius: 8,
+        paddingHorizontal: 18,
+        paddingVertical: 8,
+        marginBottom:'1%'
+    },
+   
 })
