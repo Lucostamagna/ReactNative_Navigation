@@ -4,6 +4,7 @@ import Setting from '../Screens/Setting';
 import Profile from '../Screens/Profile';
 import { Colors } from '../Contants/Colors';
 import { Text, View } from 'react-native';
+import MyBottomTab from './MyBottomTab';
 
 const HomeStack = createStackNavigator();
 
@@ -44,7 +45,7 @@ const myConfig = {
 export default function MyStack() {
   return (
     <HomeStack.Navigator initialRouteName="Home" screenOptions={myConfig}>
-      <HomeStack.Screen name="Home" component={HomeScreen} />
+      <HomeStack.Screen name="Root" component={MyBottomTab} />
       <HomeStack.Screen name="Profile" component={Profile} />
       <HomeStack.Screen name="Setting" component={Setting} />
     </HomeStack.Navigator>

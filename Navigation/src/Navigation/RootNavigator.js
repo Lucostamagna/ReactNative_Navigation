@@ -5,8 +5,8 @@ import MyBottomTab from "./MyBottomTab";
 export default function RootNavigator (){
     return(
         <NavigationContainer>
-            {/* <MyStack /> */}
-            <MyBottomTab/>
+            <MyStack />
+            {/* <MyBottomTab/> */}
         </NavigationContainer>
     )
 }
