@@ -3,6 +3,7 @@ import HomeScreen from '../Screens/HomeScreen';
 import Profile from '../Screens/Profile';
 import { FontAwesome } from '@expo/vector-icons';
 import { Colors } from '../Contants/Colors';
+import MyTopTab from './MyTopTab';
 
 const Tab = createBottomTabNavigator();
 const MyBottomTab = () => {
@@ -15,8 +16,8 @@ const MyBottomTab = () => {
       }}
     >
       <Tab.Screen
-        name="Home"
-        component={HomeScreen}
+        name="TopTab"
+        component={MyTopTab}
         options={{
           tabBarIcon: ({ color }) => (
             <FontAwesome name="home" size={32} color={color} />
