@@ -23,9 +23,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     margin: 10,
     padding: 10,
-    backgroundColor: Colors.ligth,
+    backgroundColor: Colors.primaryColor,
     borderRadius: 10,
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: Colors.details,
   },
 });
