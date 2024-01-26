@@ -3,8 +3,10 @@ import { Text, View, Button, TouchableOpacity } from 'react-native';
 import { globalStyles } from '../../Styles/Global';
 import Input from '../../Components/Input';
 import Butto from '../../Components/Button';
+import { useNavigation } from '@react-navigation/native';
 
-const SingUp = ({navigation}) => {
+const SingUp = () => {
+  const navigation = useNavigation();
   return (
     <View style={globalStyles.screenContainer}>
     <Text style={globalStyles.title}>Sing Up</Text>
