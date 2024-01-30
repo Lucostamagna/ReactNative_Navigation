@@ -5,7 +5,7 @@ import SingUp from '../Screens/AuthScreens/SingUp';
 import AuthStack from './AuthStack';
 
 export default function RootNavigator() {
-  const user = true;
+  const user = false;
   return (
     <NavigationContainer>
       {user ? <MyStack /> : <AuthStack />}
