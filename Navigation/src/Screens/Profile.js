@@ -1,21 +1,23 @@
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
 
 import { Text, View, Button, TouchableOpacity } from 'react-native';
 import { globalStyles } from '../Styles/Global';
+import { signOut } from '../features/auth/auth';
+import { useDispatch } from 'react-redux';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Profile = () => {
-  const navigation = useNavigation();
+  const dispatch = useDispatch();
+
   return (
     <View style={globalStyles.screenContainer}>
       <Text style={globalStyles.title}>PROFILE</Text>
-      <TouchableOpacity
-        style={globalStyles.botton}
-        title="Go Back"
-        onPress={() => navigation.goBack('Home')}
-      >
-        <Text> Go Back</Text>
-      </TouchableOpacity>
+      <Button
+        title="sign out"onPress={async () => {
+          await AsyncStorage.removeItem('@token');
+          dispatch(signOut());
+        }}
+      />
     </View>
   );
 };
