@@ -5,10 +5,11 @@ import AuthStack from './AuthStack';
 import { useSelector } from 'react-redux'
 
 export default function RootNavigator() {
-  const user = useSelector(state => state.auth); //el nombre de mi reducer es auth 
+  const  { userToken } = useSelector(state => state.auth); //el nombre de mi reducer es auth 
+ 
   return (
     <NavigationContainer>
-      {user ? <MyStack /> : <AuthStack />}
+      {userToken ? <MyStack /> : <AuthStack />}
     </NavigationContainer>
   );
 }

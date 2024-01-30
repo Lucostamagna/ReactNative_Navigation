@@ -14,7 +14,7 @@ export default function AuthStack() {
     } }>
         
         <Auth.Screen name="Login" component={Login}/>
-        <Auth.Screen name="Sing Up" component={SingUp}/>
+        <Auth.Screen name="SingUp" component={SingUp}/>
     </Auth.Navigator>
   )
 }
