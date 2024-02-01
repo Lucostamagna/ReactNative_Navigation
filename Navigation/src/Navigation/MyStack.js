@@ -20,14 +20,7 @@ function CustomHeader({ title }) {
         alignItems: 'center',
       }}
     >
-      <Text
-        style={{
-          fontSize: 25,
-          color: 'black',
-        }}
-      >
-        {title}
-      </Text>
+     
     </View>
   );
 }
@@ -39,7 +32,7 @@ const myConfig = {
   presentation: 'card',
   gestureEnabled: false,
   header: ({ navigation, route, options, back }) => (
-    <CustomHeader title={route.name} />
+    <CustomHeader  />
   ),
 };
 export default function MyStack() {

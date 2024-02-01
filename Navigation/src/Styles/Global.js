@@ -23,5 +23,9 @@ export const globalStyles = StyleSheet.create({
         paddingVertical: 8,
         marginBottom:'1%'
     },
+    inputContainer:{
+    flex:1,
+    backgroundColor:Colors.primaryColor,
    
+    }
 })
