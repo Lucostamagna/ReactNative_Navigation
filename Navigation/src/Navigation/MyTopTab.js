@@ -3,6 +3,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import HomeScreen from '../Screens/HomeScreen';
 import Profile from '../Screens/Profile';
 import { Colors } from '../Contants/Colors';
+import ContactRedux from '../Screens/ContactRedux';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -16,6 +17,7 @@ const MyTopTab = () => {
     }}>
         <Tab.Screen name='home' component={HomeScreen}/>
         <Tab.Screen name='profile' component={Profile}/>
+        <Tab.Screen name='redux' component={ContactRedux}/>
     </Tab.Navigator>
   )
 }

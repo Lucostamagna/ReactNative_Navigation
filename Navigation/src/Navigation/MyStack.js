@@ -5,6 +5,7 @@ import Profile from '../Screens/Profile';
 import { Colors } from '../Contants/Colors';
 import { Text, View } from 'react-native';
 import MyBottomTab from './MyBottomTab';
+import OnBoarding from '../Screens/OnBoarding';
 
 const HomeStack = createStackNavigator();
 
@@ -37,10 +38,14 @@ const myConfig = {
 };
 export default function MyStack() {
   return (
-    <HomeStack.Navigator initialRouteName="Home" screenOptions={myConfig}>
+    <HomeStack.Navigator initialRouteName="OnBoarding" screenOptions={myConfig}>
       <HomeStack.Screen name="Root" component={MyBottomTab} />
       <HomeStack.Screen name="Profile" component={Profile} />
       <HomeStack.Screen name="Setting" component={Setting} />
+      <HomeStack.Screen name="OnBoarding" component={OnBoarding} options={{
+        headerShown:false
+      }} />
+      
     </HomeStack.Navigator>
   );
 }
