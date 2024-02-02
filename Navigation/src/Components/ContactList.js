@@ -10,14 +10,12 @@ import {
 } from 'react-native';
 import { getRandomPhoto } from '../utils/randomPhoto';
 import Input from './Input';
+import { contactsStore } from '../reducers/contactReducer';
 import { Colors } from '../Contants/Colors';
 import { FontAwesome } from '@expo/vector-icons';
 
-export default function ContactList({
-  contacts,
-  onChangeContact,
-  onDeleteContact,
-}) {
+export default function ContactList() {
+  const{contacts}= React.useContext(contactsStore);
   return (
     <View>
       <ScrollView>
@@ -25,8 +23,7 @@ export default function ContactList({
           <Contact
             key={index}
             contact={contact}
-            onChange={onChangeContact}
-            onDelete={onDeleteContact}
+            
           />
         ))}
       </ScrollView>
@@ -34,7 +31,9 @@ export default function ContactList({
   );
 }
 
-function Contact({ contact, onChange, onDelete }) {
+function Contact({ contact}) {
+  const {hanldeChangeContact,handleDeleteContact}=React.useContext(contactsStore);
+
   const [isEditing, setIsEditing] = React.useState(false);
   let contactContainer;
   //no necesito que se vuelvan a renderizar loscontact que ya tengo
@@ -45,7 +44,7 @@ function Contact({ contact, onChange, onDelete }) {
       <View>
         <Input
           value={contact.name}
-          onChangeText={text => onChange({ ...contact, name: text })}
+          onChangeText={text => hanldeChangeContact({ ...contact, name: text })}
         />
       </View>
     );
@@ -75,7 +74,7 @@ function Contact({ contact, onChange, onDelete }) {
             />
           </Pressable>
         )}
-        <Pressable onPress={() => onDelete(contact.id)}>
+        <Pressable onPress={() => handleDeleteContact(contact.id)}>
           <FontAwesome
             name="trash"
             size={24}

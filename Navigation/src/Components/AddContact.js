@@ -2,12 +2,18 @@ import * as React from 'react';
 import { Button, StyleSheet, View } from 'react-native';
 import Input from './Input';
 import { Colors } from '../Contants/Colors';
-const AddContact = ({onAddContact}) => {
+import { contactsStore } from '../reducers/contactReducer';
+
+
+
+
+const AddContact = () => {
+  const {handleAddContact}= React.useContext(contactsStore)
   const [name, setName] = React.useState('');
 
   function handleAdd(){
     setName('');
-    onAddContact(name)
+    handleAddContact(name)
   }
   return (
     <View style={style.container}>

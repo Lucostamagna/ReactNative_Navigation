@@ -7,27 +7,25 @@ import { useDispatch } from 'react-redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import AddContact from '../Components/AddContact';
 import ContactList from '../Components/ContactList';
-import {contactReducer} from '../reducers/contactReducer'
-
+import { ContactsProvider } from '../reducers/contactReducer';
 
 const Profile = () => {
-  const [contacts, dispatch] = React.useReducer(
-    contactReducer,
-    initialContacts
-    );
+  // const [contacts, dispatch] = React.useReducer(
+  //   contactReducer,
+  //   initialContacts
+  //   );
   // const [contacts, setContacts] = React.useState(initialContacts);
 
-  function handleAddContact(name) {
-    dispatch({type:'ADD', id:nexId++, name})
-  }
-  function handleDeleteContact(id) {
-    dispatch({type:'DELETE', id})
-  }
+  // function handleAddContact(name) {
+  //   dispatch({type:'ADD', id:nexId++, name})
+  // }
+  // function handleDeleteContact(id) {
+  //   dispatch({type:'DELETE', id})
+  // }
 
-  function hanldeChangeContact(contact) {
-    dispatch({type:'CHANGE', contact})
-  }
-
+  // function hanldeChangeContact(contact) {
+  //   dispatch({type:'CHANGE', contact})
+  // }
 
   //USESTATE
   // function handleAddContact(name) {
@@ -41,24 +39,34 @@ const Profile = () => {
   //   setContacts(contacts.map(c => (c.id === contact.id ? contact : c)));
   // }
 
+  //   return (
+  //     <View style={globalStyles.inputContainer}>
+  //       <AddContact onAddContact={handleAddContact} />
+  //       <ContactList
+  //         contacts={contacts}
+  //         onChangeContact={hanldeChangeContact}
+  //         onDeleteContact={handleDeleteContact}
+  //       />
+  //     </View>
+  //   );
+  // };
+
   return (
-    <View style={globalStyles.inputContainer}>
-      <AddContact onAddContact={handleAddContact} />
-      <ContactList
-        contacts={contacts}
-        onChangeContact={hanldeChangeContact}
-        onDeleteContact={handleDeleteContact}
-      />
-    </View>
+    <ContactsProvider>
+      <View style={globalStyles.inputContainer}>
+        <AddContact />
+        <ContactList />
+      </View>
+    </ContactsProvider>
   );
 };
 
-let nexId = 3;
-const initialContacts = [
-  { id: 0, name: 'Lucia Costamagna' },
-  { id: 1, name: 'Mica Boriglio' },
-  { id: 2, name: 'Cielo Lee' },
-];
+// let nexId = 3;
+// const initialContacts = [
+//   { id: 0, name: 'Lucia Costamagna' },
+//   { id: 1, name: 'Mica Boriglio' },
+//   { id: 2, name: 'Cielo Lee' },
+// ];
 
 // return (
 //   <View style={globalStyles.screenContainer}>
