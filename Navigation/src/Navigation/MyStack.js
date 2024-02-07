@@ -38,7 +38,7 @@ const myConfig = {
 };
 export default function MyStack() {
   return (
-    <HomeStack.Navigator initialRouteName="OnBoarding" screenOptions={myConfig}>
+    <HomeStack.Navigator initialRouteName="HomeScreen" screenOptions={myConfig}>
       <HomeStack.Screen name="Root" component={MyBottomTab} />
       <HomeStack.Screen name="Profile" component={Profile} />
       <HomeStack.Screen name="Setting" component={Setting} />
