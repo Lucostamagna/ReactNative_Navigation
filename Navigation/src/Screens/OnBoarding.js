@@ -38,7 +38,7 @@ const OnBoarding = () => {
         alert('fail to get token');
         return;
       }
-      token = (await Notifications.getExpoPushTokenAsync()).data;
+      token = (await Notifications.getExpoPushTokenAsync({projectId:''})).data;
       //guardo mi token si acepta notificaciones
       console.log('this is the token', token);
     } else {
