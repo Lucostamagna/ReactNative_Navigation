@@ -8,6 +8,7 @@ import * as Notifications from 'expo-notifications';
 import * as Device from 'expo-device';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+
 const OnBoarding = () => {
   const navigation = useNavigation();
 
@@ -15,11 +16,11 @@ const OnBoarding = () => {
     registerForPushNotificationsAsync()
       .then(async token => {
         await AsyncStorage.setItem('@pushtoken', token);
-        navigation.navigate('HomeScreen');
+        navigation.navigate('Root');
       })
       .catch(error => {
         console.log('error');
-        navigation.navigate('HomeScreen');
+        navigation.navigate('Root');
       });
   }
 
